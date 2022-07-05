@@ -8,8 +8,7 @@ const connectToDevTools = import.meta.env.DEV;
 
 const defaultOptions: DefaultOptions = {
   query: {
-    fetchPolicy: 'network-only',
-    errorPolicy: 'all',
+    errorPolicy: 'ignore',
   },
 };
 
