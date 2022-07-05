@@ -1,0 +1,66 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+}
+
+directive @cacheControl(maxAge: Int, scope: CacheControlScope) on OBJECT | FIELD_DEFINITION | INTERFACE
+
+type Attribute {
+    displayValue: String
+    id: String!
+    value: String
+}
+
+type AttributeSet {
+    id: String!
+    items: [Attribute]
+    name: String
+    type: String
+}
+
+type Category {
+    name: String
+    products: [Product]!
+}
+
+type Currency {
+    label: String!
+    symbol: String!
+}
+
+type Price {
+    amount: Float!
+    currency: Currency!
+}
+
+type Product {
+    attributes: [AttributeSet]
+    brand: String!
+    category: String!
+    description: String!
+    gallery: [String]
+    id: String!
+    inStock: Boolean
+    name: String!
+    prices: [Price!]!
+}
+
+type Query {
+    categories: [Category]
+    category(input: CategoryInput): Category
+    currencies: [Currency]
+    product(id: String!): Product
+}
+
+enum CacheControlScope {
+    PRIVATE
+    PUBLIC
+}
+
+"The `Upload` scalar type represents a file upload."
+scalar Upload
+
+input CategoryInput {
+    title: String!
+}
