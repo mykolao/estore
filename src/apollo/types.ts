@@ -37,3 +37,10 @@ export type TProduct = {
   name: string;
   prices: TPrice[];
 };
+
+export type TCategoryProduct = Pick<
+  TProduct,
+  'id' | 'name' | 'brand' | 'inStock' | 'prices' | 'gallery'
+>;
+
+export type TCategoryProducts = TCategoryProduct[];
