@@ -1,6 +1,7 @@
 import { PureComponent } from 'react';
 
 import { TCurrency } from 'apollo/types';
+import CurrencyArrow from 'components/CurrencySelect/CurrencyArrow';
 import CurrencyOption from 'components/CurrencySelect/CurrencyOption';
 import { CurrencySelectStyled } from 'components/CurrencySelect/CurrencySelect.styled';
 import {
@@ -46,6 +47,7 @@ export class CurrencySelectComponent extends PureComponent<
     return (
       <CurrencySelectStyled onClick={this.handleActivate} onBlur={this.handleDeactivate}>
         <div className="symbol">{symbol}</div>
+        <CurrencyArrow isActive={isActive} />
         {isActive && (
           <ul className="options">
             {currencies.map(currency => (

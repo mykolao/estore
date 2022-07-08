@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const CurrencySelectStyled = styled.button`
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   position: relative;
 
   .symbol {
