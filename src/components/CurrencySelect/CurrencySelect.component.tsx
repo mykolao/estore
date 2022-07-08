@@ -18,13 +18,9 @@ export class CurrencySelectComponent extends PureComponent<
   }
 
   handleActivate = () => {
-    const { isActive } = this.state;
+    const { isActive: isCurrentActive } = this.state;
 
-    if (isActive) {
-      this.setState({ isActive: false });
-    } else {
-      this.setState({ isActive: true });
-    }
+    this.setState({ isActive: !isCurrentActive });
   };
 
   handleDeactivate = () => {
@@ -41,12 +37,15 @@ export class CurrencySelectComponent extends PureComponent<
   };
 
   render() {
-    const { selectedCurrency, currencies } = this.props;
+    const {
+      selectedCurrency: { symbol },
+      currencies,
+    } = this.props;
     const { isActive } = this.state;
 
     return (
       <CurrencySelectStyled onClick={this.handleActivate} onBlur={this.handleDeactivate}>
-        <div className="symbol">{selectedCurrency.symbol}</div>
+        <div className="symbol">{symbol}</div>
         {isActive && (
           <ul className="options">
             {currencies.map(currency => (
