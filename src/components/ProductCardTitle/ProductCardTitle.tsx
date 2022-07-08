@@ -8,11 +8,11 @@ import { PATHS } from 'routes';
 
 export class ProductCardTitle extends PureComponent<ProductCardTitleProps> {
   render() {
-    const { brand, name, id } = this.props;
+    const { brand, name, id, inStock } = this.props;
     const path = `${PATHS.product}/${id}`;
 
     return (
-      <ProductCardTitleStyled>
+      <ProductCardTitleStyled inStock={inStock}>
         <Link to={path}>{`${brand} ${name}`}</Link>
       </ProductCardTitleStyled>
     );
