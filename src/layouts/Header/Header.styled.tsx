@@ -6,6 +6,7 @@ export const HeaderStyled = styled.header`
   justify-content: center;
   z-index: 10;
   height: ${({ theme: { hHeader } }) => hHeader};
+  background-color: ${({ theme: { cWhite } }) => cWhite};
   width: 100vw;
 
   & .wrapper {
