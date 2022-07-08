@@ -1,12 +1,13 @@
 import { PureComponent } from 'react';
 
+import CurrencySelect from 'components/CurrencySelect';
 import { ActionbarStyled } from 'layouts/Actionbar/Actionbar.styled';
 
 export class Actionbar extends PureComponent {
   render() {
     return (
       <ActionbarStyled>
-        <button type="button">Currency</button>
+        <CurrencySelect />
         <button type="button">Cart</button>
       </ActionbarStyled>
     );
