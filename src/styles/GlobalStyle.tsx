@@ -7,9 +7,12 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   
+  a, button, div, p, h1, h2, h3 {
+    color: ${({ theme }) => theme.cBlack};
+  }
+  
   body {
     font-family: 'Raleway', sans-serif;
-    color: ${({ theme }) => theme.cBlack};
   }
   
   a {
