@@ -13,6 +13,6 @@ export const HeaderStyled = styled.header`
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     width: ${({ theme: { wApp } }) => wApp};
-    padding: 0 12px;
+    padding: 0 28px 0 12px;
   }
 `;
