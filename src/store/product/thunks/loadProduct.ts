@@ -14,6 +14,11 @@ export const loadProduct = createAsyncThunk<void, string, ThunkApi>(
   typePrefix,
   async (id, { dispatch, getState }) => {
     const isCurrentlyLoading = getState().product.isLoading;
+    const currentProductId = getState().product.product.id;
+
+    if (currentProductId && currentProductId === id) {
+      return;
+    }
 
     if (!isCurrentlyLoading) {
       dispatch(setIsLoading(true));
