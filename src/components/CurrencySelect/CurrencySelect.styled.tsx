@@ -22,6 +22,7 @@ export const CurrencySelectStyled = styled.button`
     flex-direction: column;
     align-items: flex-start;
 
+    background-color: ${({ theme: { cWhite } }) => cWhite};
     box-shadow: 0 4px 35px rgba(168, 172, 176, 0.19);
   }
 
