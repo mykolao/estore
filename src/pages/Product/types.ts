@@ -1,6 +1,7 @@
 import { RouteComponentProps } from 'react-router-dom';
 
 import { PATH_PARAMS } from 'routes';
+import { WithLoadProductDispatch, WithLoadProductState } from 'store/product/hoc';
 
 interface ProductRouteParams {
   [PATH_PARAMS.productId]: string;
@@ -8,4 +9,7 @@ interface ProductRouteParams {
 
 interface ProductRoute extends RouteComponentProps<ProductRouteParams> {}
 
-export interface ProductPageProps extends ProductRoute {}
+export interface ProductProps
+  extends ProductRoute,
+    WithLoadProductState,
+    WithLoadProductDispatch {}
