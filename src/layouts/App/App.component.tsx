@@ -1,5 +1,6 @@
 import { PureComponent } from 'react';
 
+import AppLoader from 'components/AppLoader';
 import { AppStyled } from 'layouts/App/App.styled';
 import { AppProps } from 'layouts/App/types';
 import Footer from 'layouts/Footer';
@@ -16,12 +17,12 @@ export class AppComponent extends PureComponent<AppProps> {
   render() {
     const { loading, error } = this.props;
 
-    if (loading) {
-      return <AppStyled>Loading</AppStyled>;
-    }
-
-    if (error) {
-      return <AppStyled>Error</AppStyled>;
+    if (loading || error) {
+      return (
+        <AppStyled>
+          <AppLoader isError={error} />
+        </AppStyled>
+      );
     }
 
     return (
