@@ -25,6 +25,7 @@ export const ColorAttributeOptionStyled = styled.div<Props>`
     background-color: ${({ value }) => value};
     width: 100%;
     height: 100%;
+    opacity: 0.6;
   }
 
   ${({ isSelected }) =>
