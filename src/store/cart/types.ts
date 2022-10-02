@@ -1,6 +1,6 @@
 import { TAttributeSet, TPrice, TProduct } from 'apollo/types';
 
-export interface CartItem {
+export interface TCartItem {
   itemId: string;
   quantity: number;
   selectedAttributes: TAttributeSet[];
@@ -15,6 +15,6 @@ export interface CartSummary {
 }
 
 export interface CartState {
-  items: CartItem[];
+  items: TCartItem[];
   summary: CartSummary;
 }

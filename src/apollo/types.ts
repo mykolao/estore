@@ -43,4 +43,4 @@ export type TCategoryProduct = Pick<
   'id' | 'name' | 'brand' | 'inStock' | 'prices' | 'gallery'
 >;
 
-export type TCategoryProducts = TCategoryProduct[];
+export type TCategoryProducts = TProduct[];

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { initialState } from 'store/cart/initialState';
-import { CartItem, CartState, CartSummary } from 'store/cart/types';
+import { TCartItem, CartState, CartSummary } from 'store/cart/types';
 import { Action } from 'store/types';
 
 const name = 'cart';
@@ -13,15 +13,15 @@ const slice = createSlice({
     setCart(state, { payload }: Action<CartState>) {
       return payload;
     },
-    pushItem(state, { payload }: Action<CartItem>) {
+    pushItem(state, { payload }: Action<TCartItem>) {
       state.items.push(payload);
     },
-    updateItem(state, { payload }: Action<CartItem>) {
+    updateItem(state, { payload }: Action<TCartItem>) {
       state.items = state.items.map(item =>
         item.itemId === payload.itemId ? payload : item,
       );
     },
-    removeItem(state, { payload }: Action<CartItem>) {
+    removeItem(state, { payload }: Action<TCartItem>) {
       state.items = state.items.filter(({ itemId }) => itemId !== payload.itemId);
     },
     incrementItemCount(state, { payload: id }: Action<string>) {
