@@ -30,6 +30,17 @@ const slice = createSlice({
         item.itemId === id ? { ...item, quantity: currentCount + 1 } : item,
       );
     },
+    decrementItemCount(state, { payload: id }: Action<string>) {
+      const currentCount = state.items.find(({ itemId }) => itemId === id)!.quantity;
+
+      if (currentCount > 1) {
+        state.items = state.items.map(item =>
+          item.itemId === id ? { ...item, quantity: currentCount - 1 } : item,
+        );
+      } else {
+        state.items = state.items.filter(item => item.itemId !== id);
+      }
+    },
     setSummary(state, { payload }: Action<CartSummary>) {
       state.summary = payload;
     },
