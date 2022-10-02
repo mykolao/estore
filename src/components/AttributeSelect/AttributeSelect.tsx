@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import { PureComponent } from 'react';
 
 import { TAttributeSet } from 'apollo/types';
@@ -8,12 +9,14 @@ interface Props {
   value: TAttributeSet;
   selected: TAttributeSet;
   isActive: boolean;
-  onChange: (value: TAttributeSet) => void;
+  onChange?: (value: TAttributeSet) => void;
 }
 
 export class AttributeSelect extends PureComponent<Props> {
   private handleSelect = (newId: string) => {
     const { value, onChange } = this.props;
+
+    if (!onChange) return;
 
     const newItems = value.items.filter(({ id }) => id === newId);
 
