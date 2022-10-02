@@ -16,14 +16,6 @@ const slice = createSlice({
     pushItem(state, { payload }: Action<TCartItem>) {
       state.items.push(payload);
     },
-    updateItem(state, { payload }: Action<TCartItem>) {
-      state.items = state.items.map(item =>
-        item.itemId === payload.itemId ? payload : item,
-      );
-    },
-    removeItem(state, { payload }: Action<TCartItem>) {
-      state.items = state.items.filter(({ itemId }) => itemId !== payload.itemId);
-    },
     incrementItemCount(state, { payload: id }: Action<string>) {
       const currentCount = state.items.find(({ itemId }) => itemId === id)!.quantity;
       state.items = state.items.map(item =>
