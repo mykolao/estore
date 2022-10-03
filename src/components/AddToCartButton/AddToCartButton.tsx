@@ -3,12 +3,12 @@ import { PureComponent } from 'react';
 import cartImage from 'assets/images/cart-white.svg';
 import { AddToCartButtonStyled } from 'components/AddToCartButton/AddToCartButton.styled';
 import { AddToCartButtonProps } from 'components/AddToCartButton/types';
+import { withAddToCart } from 'store/cart/hoc/withAddToCart';
 
-export class AddToCartButton extends PureComponent<AddToCartButtonProps> {
+export class Component extends PureComponent<AddToCartButtonProps> {
   handleAddToCart = () => {
-    const { id } = this.props;
-    // eslint-disable-next-line no-console
-    console.log(`Adding ${id} to the cart.`);
+    const { id, addToCartById } = this.props;
+    addToCartById(id);
   };
 
   render() {
@@ -21,3 +21,5 @@ export class AddToCartButton extends PureComponent<AddToCartButtonProps> {
     );
   }
 }
+
+export const AddToCartButton = withAddToCart(Component);
