@@ -25,10 +25,4 @@ export const CurrencySelectStyled = styled.button`
     background-color: ${({ theme: { cWhite } }) => cWhite};
     box-shadow: 0 4px 35px rgba(168, 172, 176, 0.19);
   }
-
-  &:hover {
-    .symbol {
-      color: ${({ theme: { cPrimary } }) => cPrimary};
-    }
-  }
 `;
