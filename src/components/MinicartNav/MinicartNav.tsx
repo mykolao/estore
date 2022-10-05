@@ -7,14 +7,20 @@ import { PATHS } from 'routes';
 
 const { cart, checkout } = PATHS;
 
-export class MinicartNav extends PureComponent {
+interface Props {
+  onClick: () => void;
+}
+
+export class MinicartNav extends PureComponent<Props> {
   render() {
+    const { onClick } = this.props;
+
     return (
       <MinicartNavStyled>
-        <Link className="bag" to={cart}>
+        <Link className="bag" to={cart} onClick={onClick}>
           View Bag
         </Link>
-        <Link className="checkout" to={checkout}>
+        <Link className="checkout" to={checkout} onClick={onClick}>
           Check Out
         </Link>
       </MinicartNavStyled>

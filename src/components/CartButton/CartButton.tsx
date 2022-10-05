@@ -24,7 +24,7 @@ export class CartButton extends PureComponent<Readonly<{}>, State> {
   };
 
   private handleDeactivate = () => {
-    setTimeout(() => this.setState({ isActive: false }), 100);
+    this.setState({ isActive: false });
   };
 
   render() {
@@ -32,15 +32,11 @@ export class CartButton extends PureComponent<Readonly<{}>, State> {
 
     return (
       <CartButtonStyled>
-        <button
-          type="button"
-          onClick={this.handleActivate}
-          onBlur={this.handleDeactivate}
-        >
+        <button type="button" onClick={this.handleActivate}>
           <CartButtonBadge />
           <img src={cartIcon} alt="cart" />
         </button>
-        {isActive && <Minicart />}
+        {isActive && <Minicart onHide={this.handleDeactivate} />}
       </CartButtonStyled>
     );
   }

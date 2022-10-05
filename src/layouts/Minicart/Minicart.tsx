@@ -5,16 +5,22 @@ import MinicartSummary from 'components/MinicartSummary';
 import { MinicartStyled } from 'layouts/Minicart/Minicart.styled';
 import MinicartItemList from 'layouts/MinicartItemList';
 
-export class Minicart extends PureComponent {
+interface Props {
+  onHide: () => void;
+}
+
+export class Minicart extends PureComponent<Props> {
   render() {
+    const { onHide } = this.props;
     return (
       <MinicartStyled>
-        <div className="backdrop" />
+        {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+        <button className="backdrop" type="button" onClick={onHide} />
         <div className="minicart">
           <MinicartSummary>
             <MinicartItemList />
           </MinicartSummary>
-          <MinicartNav />
+          <MinicartNav onClick={onHide} />
         </div>
       </MinicartStyled>
     );
