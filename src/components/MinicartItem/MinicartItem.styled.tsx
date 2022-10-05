@@ -9,6 +9,7 @@ export const MinicartItemStyled = styled.div`
     height: 190px;
 
     & img {
+      margin-left: 8px;
       object-fit: contain;
       height: 100%;
       width: 120px;
