@@ -13,13 +13,9 @@ export class ProductCard extends PureComponent<ProductCardProps, ProductCardStat
   }
 
   toggleIsHovered = () => {
-    const {
-      product: { inStock },
-    } = this.props;
-
     const { isHovered } = this.state;
 
-    if (inStock) this.setState({ isHovered: !isHovered });
+    this.setState({ isHovered: !isHovered });
   };
 
   render() {
@@ -31,7 +27,6 @@ export class ProductCard extends PureComponent<ProductCardProps, ProductCardStat
 
     return (
       <ProductCardStyled
-        inStock={inStock}
         onMouseEnter={this.toggleIsHovered}
         onMouseLeave={this.toggleIsHovered}
       >
