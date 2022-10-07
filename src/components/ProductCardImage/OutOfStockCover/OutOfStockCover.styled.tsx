@@ -8,13 +8,16 @@ export const OutOfStockCoverStyled = styled.div`
   width: 100%;
   height: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   background-color: rgba(255, 255, 255, 0.51);
 
   & a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
     font-weight: 400;
     font-size: 24px;
     line-height: 160%;
