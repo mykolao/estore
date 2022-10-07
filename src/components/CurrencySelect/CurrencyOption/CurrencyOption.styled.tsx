@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const CurrencyOptionStyled = styled.li`
   font-weight: 500;
@@ -11,6 +11,16 @@ export const CurrencyOptionStyled = styled.li`
   padding: 8px 20px;
 
   &:hover {
+    background-color: #eee;
+  }
+
+  ${({ className }) =>
+    className === 'active' &&
+    css`
+      background-color: #eee;
+    `}
+
+  & .active {
     background-color: #eee;
   }
 `;

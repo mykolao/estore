@@ -12,7 +12,17 @@ export class CurrencyOption extends PureComponent<CurrencyOptionProps> {
   render() {
     const {
       value: { symbol, label },
+      isActive,
     } = this.props;
+
+    if (isActive) {
+      return (
+        <CurrencyOptionStyled
+          className="active"
+          onClick={this.handleClick}
+        >{`${symbol} ${label}`}</CurrencyOptionStyled>
+      );
+    }
 
     return (
       <CurrencyOptionStyled

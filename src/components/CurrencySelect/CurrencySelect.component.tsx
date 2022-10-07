@@ -39,19 +39,20 @@ export class CurrencySelectComponent extends PureComponent<
 
   render() {
     const {
-      selectedCurrency: { symbol },
+      selectedCurrency: { symbol: selectedSymbol },
       currencies,
     } = this.props;
     const { isActive } = this.state;
 
     return (
       <CurrencySelectStyled onClick={this.handleActivate} onBlur={this.handleDeactivate}>
-        <div className="symbol">{symbol}</div>
+        <div className="symbol">{selectedSymbol}</div>
         <CurrencyArrow isActive={isActive} />
         {isActive && (
           <ul className="options">
             {currencies.map(currency => (
               <CurrencyOption
+                isActive={currency.symbol === selectedSymbol}
                 key={currency.label}
                 value={currency}
                 onClick={this.handleSelect}
