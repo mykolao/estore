@@ -4,6 +4,7 @@ import { appReducer } from 'store/app';
 import { cartReducer } from 'store/cart';
 import { categoryReducer } from 'store/category';
 import { currencyReducer } from 'store/currency';
+import { minicartReducer } from 'store/minicart';
 import { productReducer } from 'store/product';
 
 const reducer = {
@@ -12,6 +13,7 @@ const reducer = {
   category: categoryReducer,
   product: productReducer,
   cart: cartReducer,
+  minicart: minicartReducer,
 };
 
 const devTools = import.meta.env.DEV;
