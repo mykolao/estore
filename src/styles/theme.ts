@@ -7,4 +7,5 @@ export const theme = {
   cGrey: 'hsla(231, 6%, 58%, 1)',
   cBackdrop: 'hsla(247.059, 13%, 25%, 0.22)',
   breakMedium: '800px',
+  breakSmall: '500px',
 } as const;

@@ -14,5 +14,11 @@ export const HeaderStyled = styled.header`
     grid-template-columns: 2fr 1fr 2fr;
     width: ${({ theme: { wApp } }) => wApp};
     padding: 0 28px 0 12px;
+
+    @media (max-width: ${({ theme: { breakSmall } }) => breakSmall}) {
+      > div:nth-child(2) {
+        visibility: hidden;
+      }
+    }
   }
 `;

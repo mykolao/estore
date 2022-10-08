@@ -5,4 +5,8 @@ export const ActionbarStyled = styled.div`
   align-items: center;
   justify-content: end;
   gap: 22px;
+
+  @media (max-width: ${({ theme: { breakSmall } }) => breakSmall}) {
+    gap: 11px;
+  }
 `;

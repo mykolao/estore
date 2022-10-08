@@ -7,6 +7,10 @@ export const CategoryOptionStyled = styled.div<{ isSelected: boolean }>`
   border-bottom: 2px solid ${({ theme: { cWhite } }) => cWhite};
   padding: 0 16px;
 
+  @media (max-width: ${({ theme: { breakSmall } }) => breakSmall}) {
+    padding: 0 8px;
+  }
+
   ${({ isSelected }) =>
     isSelected
       ? css`

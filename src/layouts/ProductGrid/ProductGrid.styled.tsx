@@ -10,4 +10,8 @@ export const ProductGridStyled = styled.div`
     grid-template-columns: repeat(2, 1fr);
     margin-top: 32px;
   }
+
+  @media (max-width: ${({ theme: { breakSmall } }) => breakSmall}) {
+    grid-template-columns: 1fr;
+  }
 `;

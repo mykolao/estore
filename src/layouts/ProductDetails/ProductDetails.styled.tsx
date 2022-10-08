@@ -12,4 +12,8 @@ export const ProductDetailsStyled = styled.div`
     gap: 18px;
     margin: 0 32px;
   }
+
+  @media (max-width: ${({ theme: { breakSmall } }) => breakSmall}) {
+    margin: 0 8px;
+  }
 `;
