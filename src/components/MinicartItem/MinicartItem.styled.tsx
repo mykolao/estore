@@ -6,7 +6,7 @@ export const MinicartItemStyled = styled.div`
 
   & .rightSection {
     display: flex;
-    height: 190px;
+    max-height: 190px;
 
     & img {
       margin-left: 8px;
