@@ -1,7 +1,7 @@
 import { PureComponent } from 'react';
 
 import { CurrentPriceProps } from 'components/CurrentPrice';
-import { selectPriceBuCurrency } from 'utils';
+import { formatPrice, selectPriceBuCurrency } from 'utils';
 
 export class CurrentPriceComponent extends PureComponent<CurrentPriceProps> {
   render() {
@@ -12,6 +12,6 @@ export class CurrentPriceComponent extends PureComponent<CurrentPriceProps> {
       amount,
     } = selectPriceBuCurrency(prices, selectedCurrency);
 
-    return amount ? `${symbol}${Math.floor(amount)}` : '0';
+    return `${symbol}${formatPrice(amount)}`;
   }
 }
