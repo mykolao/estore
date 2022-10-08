@@ -10,8 +10,6 @@ export const ProductCardImageStyled = styled.div<{ inStock: boolean }>`
   }
 
   & a {
-    display: block;
-
     & img {
       width: 100%;
       object-fit: contain;
