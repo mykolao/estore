@@ -7,6 +7,11 @@ export const CartItemCountControlsStyled = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  @media (max-width: ${({ theme: { breakMedium } }) => breakMedium}) {
+    flex-direction: row;
+    height: auto;
+  }
+
   & button {
     height: 45px;
     width: 45px;

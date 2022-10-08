@@ -15,5 +15,9 @@ export const AttributeSelectStyled = styled.div`
     margin-top: 8px;
     display: flex;
     gap: 8px;
+
+    @media (max-width: ${({ theme: { breakMedium } }) => breakMedium}) {
+      flex-wrap: wrap;
+    }
   }
 `;

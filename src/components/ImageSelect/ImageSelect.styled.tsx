@@ -5,4 +5,8 @@ export const ImageSelectStyled = styled.ul`
   flex-direction: column;
   gap: 36px;
   list-style: none;
+
+  @media (max-width: ${({ theme: { breakMedium } }) => breakMedium}) {
+    flex-direction: row;
+  }
 `;
