@@ -19,6 +19,25 @@ class Component extends PureComponent<ProductProps> {
     loadProduct(productId);
   }
 
+  componentDidUpdate(prevProps: Readonly<ProductProps>) {
+    const {
+      match: {
+        params: { productId: currentProductId },
+      },
+    } = prevProps;
+
+    const {
+      match: {
+        params: { productId: updatedProductId },
+      },
+      loadProduct,
+    } = this.props;
+
+    if (currentProductId !== updatedProductId) {
+      loadProduct(updatedProductId);
+    }
+  }
+
   render() {
     const { isLoading, error } = this.props;
 
