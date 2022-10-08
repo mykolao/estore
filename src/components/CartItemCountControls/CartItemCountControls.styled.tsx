@@ -8,7 +8,7 @@ export const CartItemCountControlsStyled = styled.div`
   align-items: center;
 
   @media (max-width: ${({ theme: { breakMedium } }) => breakMedium}) {
-    flex-direction: row;
+    flex-direction: row-reverse;
     height: auto;
   }
 
