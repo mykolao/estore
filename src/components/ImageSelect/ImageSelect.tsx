@@ -15,14 +15,15 @@ export class ImageSelect extends PureComponent<ImageSelectProps> {
 
     return (
       <ImageSelectStyled>
-        {images.map(img => (
-          <ImageOption
-            key={img}
-            image={img}
-            isSelected={img === selectedImage}
-            onClick={this.handleChange}
-          />
-        ))}
+        {images.length > 1 &&
+          images.map(img => (
+            <ImageOption
+              key={img}
+              image={img}
+              isSelected={img === selectedImage}
+              onClick={this.handleChange}
+            />
+          ))}
       </ImageSelectStyled>
     );
   }
