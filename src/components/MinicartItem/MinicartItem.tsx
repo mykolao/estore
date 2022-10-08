@@ -7,14 +7,21 @@ import MinicartItemControls from 'components/MinicartItemControls';
 import MinicartItemDetails from 'components/MinicartItemDetails';
 import { PATHS } from 'routes';
 import { TCartItem } from 'store/cart';
+import { WithMinicartActions, withMinicartActions } from 'store/minicart/hoc';
 
-interface Props {
+interface Props extends Pick<WithMinicartActions, 'closeMinicart'> {
   value: TCartItem;
 }
 
 const { product } = PATHS;
 
-export class MinicartItem extends PureComponent<Props> {
+class Component extends PureComponent<Props> {
+  private handleMinicartClose = () => {
+    const { closeMinicart } = this.props;
+
+    closeMinicart();
+  };
+
   render() {
     const {
       value: {
@@ -32,10 +39,10 @@ export class MinicartItem extends PureComponent<Props> {
 
     return (
       <MinicartItemStyled>
-        <MinicartItemDetails {...detailsProps} />
+        <MinicartItemDetails {...detailsProps} onClick={this.handleMinicartClose} />
         <div className="rightSection">
           <MinicartItemControls itemId={itemId} numberOfItems={quantity} />
-          <Link to={path}>
+          <Link to={path} onClick={this.handleMinicartClose}>
             <img src={img} alt="product" />
           </Link>
         </div>
@@ -43,3 +50,5 @@ export class MinicartItem extends PureComponent<Props> {
     );
   }
 }
+
+export const MinicartItem = withMinicartActions(Component);
