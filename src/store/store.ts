@@ -16,7 +16,7 @@ const reducer = {
   minicart: minicartReducer,
 };
 
-const devTools = import.meta.env.DEV;
+const devTools = process.env.NODE_ENV === 'development';
 
 export const store = configureStore({
   reducer,
