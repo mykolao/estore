@@ -1,5 +1,5 @@
 import 'styles/index.css';
-import React from 'react';
+import { StrictMode } from 'react';
 
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
@@ -11,14 +11,14 @@ import store from 'store';
 import GlobalStyle, { theme } from 'styles';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  <StrictMode>
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Provider store={store}>
+      <Provider store={store}>
+        <BrowserRouter>
           <GlobalStyle />
           <App />
-        </Provider>
-      </BrowserRouter>
+        </BrowserRouter>
+      </Provider>
     </ThemeProvider>
-  </React.StrictMode>,
+  </StrictMode>,
 );
