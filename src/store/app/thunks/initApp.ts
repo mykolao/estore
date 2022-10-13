@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { queries } from 'apollo/queries';
 import { appActions } from 'store/app/slice';
 import { cartThunks } from 'store/cart/thunks';
-import { categoryThunks } from 'store/category';
+import { categoryThunks } from 'store/category/thunks';
 import { currencyThunks } from 'store/currency';
 import { ThunkApi } from 'store/types';
 
