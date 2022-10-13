@@ -15,6 +15,7 @@
   },
   "plugins": ["react", "prettier", "react-hooks", "@typescript-eslint"],
   "rules": {
+    "linebreak-style": ["error", "windows"],
     "no-shadow": "off",
     "no-alert": "error",
     "no-debugger": "error",
