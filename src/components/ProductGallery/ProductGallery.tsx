@@ -27,7 +27,7 @@ class ProductGalleryComponent extends PureComponent<
   };
 
   render() {
-    const { gallery } = this.props;
+    const { gallery, inStock } = this.props;
     const { image } = this.state;
 
     return (
@@ -37,7 +37,12 @@ class ProductGalleryComponent extends PureComponent<
           selectedImage={image}
           onChange={this.handleImageSelect}
         />
-        <Image src={image} alt="Product" />
+        <div>
+          <div>
+            <Image src={image} alt="Product" />
+            {!inStock && <p>out of stock</p>}
+          </div>
+        </div>
       </ProductGalleryStyled>
     );
   }
