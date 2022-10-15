@@ -14,8 +14,8 @@ export const selectPriceBuCurrency = (
 
   return {
     currency: {
-      symbol: '$',
-      label: 'USD',
+      symbol: '',
+      label: '',
     },
     amount: 0,
   };
