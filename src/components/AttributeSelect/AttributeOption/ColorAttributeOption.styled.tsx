@@ -10,7 +10,7 @@ export const ColorAttributeOptionStyled = styled.div<Props>`
   width: 45px;
   height: 45px;
   padding: 2px;
-  border: 2px solid ${({ theme: { cWhite } }) => cWhite};
+  border: 2px solid rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;

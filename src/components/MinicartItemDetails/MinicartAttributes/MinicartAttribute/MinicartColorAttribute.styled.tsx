@@ -7,7 +7,7 @@ interface Props {
 
 export const MinicartColorAttributeStyled = styled.div<Props>`
   border: 1px solid
-    ${({ isSelected, theme: { cBlack, cWhite } }) => (isSelected ? cBlack : cWhite)};
+    ${({ isSelected, theme: { cBlack } }) => (isSelected ? cBlack : 'rgba(0, 0, 0, 0.1)')};
 
   & .colorValue {
     width: 16px;
