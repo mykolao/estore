@@ -5,8 +5,8 @@ import { RootState } from 'store/types';
 
 const state = ({
   product: {
-    product: { gallery },
+    product: { gallery, inStock },
   },
-}: RootState): WithProductGalleryState => ({ gallery });
+}: RootState): WithProductGalleryState => ({ gallery, inStock });
 
 export const withProductGallery = connect(state);
