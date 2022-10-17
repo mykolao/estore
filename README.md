@@ -31,5 +31,5 @@ __Links:__
 
 
 ## Scripts
-- `yarn dev` start development server
+- `yarn start` start development server
 - `yarn build` build for production
