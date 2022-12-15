@@ -1,9 +1,9 @@
-import { ApolloClient, DefaultOptions } from '@apollo/client';
+import { ApolloClient, DefaultOptions, HttpLink } from '@apollo/client';
 
 import { cache } from 'apollo/cache';
 
 const name = 'Store';
-const uri = process.env.REACT_APP_APOLLO_SERVER_URL;
+const uri = process.env.REACT_APP_APOLLO_SERVER_URL!;
 const connectToDevTools = process.env.NODE_ENV === 'development';
 
 const defaultOptions: DefaultOptions = {
@@ -14,8 +14,13 @@ const defaultOptions: DefaultOptions = {
 
 export const client = new ApolloClient({
   name,
-  uri,
   cache,
   connectToDevTools,
   defaultOptions,
+  link: new HttpLink({
+    uri,
+    fetchOptions: {
+      mode: 'no-cors',
+    },
+  }),
 });
