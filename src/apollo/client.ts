@@ -18,7 +18,4 @@ export const client = new ApolloClient({
   cache,
   connectToDevTools,
   defaultOptions,
-  fetchOptions: {
-    mode: 'no-cors',
-  }
 });
