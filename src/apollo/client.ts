@@ -1,4 +1,4 @@
-import { ApolloClient, DefaultOptions, HttpLink } from '@apollo/client';
+import { ApolloClient, DefaultOptions } from '@apollo/client';
 
 import { cache } from 'apollo/cache';
 
@@ -17,10 +17,5 @@ export const client = new ApolloClient({
   cache,
   connectToDevTools,
   defaultOptions,
-  link: new HttpLink({
-    uri,
-    fetchOptions: {
-      mode: 'no-cors',
-    },
-  }),
+  uri,
 });
